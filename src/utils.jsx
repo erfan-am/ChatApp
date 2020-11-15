@@ -10,7 +10,7 @@ export const checkValidity=(value,rules,inputs)=>{
         isValid=value.length <= rules.maxLength && isValid
     }
     if(rules.isEmail){
-        const reg=/^\S+@\S+\.\S+$/
+        const reg=/.+@[^@]+\.[^@]{2,}$/
         isValid= reg.test(value)  && isValid
     }
     if(rules.isPass){

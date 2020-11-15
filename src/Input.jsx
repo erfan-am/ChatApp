@@ -9,11 +9,12 @@ const Input = (props) => {
             name={props.name}
             type={props.type}
             onChange={props.onChange}
+            onBlur={props.touchInput}
             required
         /> 
-        <label style={{color:props.valid !==true && 'red'  }} 
+        <label style={{color:!props.valid  &&  props.touched  && 'red'  }} 
         htmlFor={props.name}>{props.label}</label>
-        <p style={{color:props.valid !==true && 'red' }}>{props.valid !==true ? props.error : props.sub}</p>
+        <p style={{color:!props.valid &&  props.touched && 'red' }}>{props.touched  ?  props.error : props.sub}</p>
     </div>
         )
 }

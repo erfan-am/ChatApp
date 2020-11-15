@@ -1,4 +1,4 @@
-export const inputs=[
+export const inputsData=[
     {
       value:'',
       id:'0',
@@ -10,10 +10,10 @@ export const inputs=[
       label:'Name',
       sub:"Enter your complete name",
       error:'Your name is not valid and must be between  5 , 10 characters' ,
-      isValid:true,
       type:"text",
-      name:'name'
-  
+      name:'name',
+      isValid:true,
+      touched:false
     },
     {
       value:'',
@@ -26,9 +26,9 @@ export const inputs=[
       sub:'Enter your correct email ',
       error:'Email is not valid',
       isValid:true,
-      type:"email",
-      name:'email'
-  
+      type:"text",
+      name:'email',
+      touched:false
     },
     {
       value:'',
@@ -44,8 +44,8 @@ export const inputs=[
       },
       isValid:true,
       type:"password",
-      name:'password'
-  
+      name:'password',
+      touched:false
     },
     {
      value:'',
@@ -59,8 +59,8 @@ export const inputs=[
      },
      isValid:true,
      type:"password",
-     name:'password'
- 
-   }
+     name:'password',
+     touched:false
+    }
   
    ]
