@@ -23,3 +23,6 @@ username , email , date , password , confirm password.
  hidden – can also have the ‘required’ attribute -->
 </li>
 </ol>
+
+## Images
+<img src="public/Screenshot from 2020-11-15 20-10-00.png" width="500" />
