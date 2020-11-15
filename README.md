@@ -5,18 +5,21 @@
 username , email , date , password , confirm password.
 
 ## Validation types support
-heavy_check_mark text
-heavy_check_mark email
-heavy_check_mark password - also comparing "re-type password" inputs
-heavy_check_mark number
-heavy_check_mark date
-heavy_check_mark time
-heavy_check_mark uRL
-heavy_check_mark search
-heavy_check_mark file
-heavy_check_mark tel
-heavy_check_mark checkbox
-heavy_check_mark select
-heavy_check_mark textarea
-heavy_check_mark hidden – can also have the ‘required’ attribute
-
+<ol>
+<li> text</li>
+<li> email</li>
+<li> password - also comparing "re-type password" inputs</li>
+<li> number</li>
+ <!-- number
+ date
+ time
+ uRL
+ search
+ file
+ tel
+ checkbox
+ select
+ textarea
+ hidden – can also have the ‘required’ attribute -->
+</li>
+</ol>
