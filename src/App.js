@@ -7,6 +7,7 @@ const App =()=>{
   const [input,setInputs]=useState({
       inputs:inputsData
   })
+  const checkInput=input.inputs[4].validation.check;
 const onChangeHandler=(e,ctrlName)=>{
   const inputs=input.inputs;
   inputs[ctrlName].touched=false;
@@ -19,15 +20,21 @@ const onChangeHandler=(e,ctrlName)=>{
     )
   setInputs({inputs:inputs})
 } 
+const onCheck=(ctrlName)=>{
+  const inputs=input.inputs;
+  inputs[ctrlName].validation.check=true;
+  setInputs({inputs:inputs})
 
+}
 const inputTouched=(ctrlName)=>{
   const inputs=input.inputs;
   inputs[ctrlName].touched=true;
   setInputs({inputs:inputs});
 }
-console.log(input.inputs[0]);
 
-
+const buttonHandler=()=>{
+  alert('hello this is formvalidation')
+}
 const inputsStyle=(
     input.inputs.map((input)=>(
       <Input
@@ -41,6 +48,7 @@ const inputsStyle=(
       valid={input.isValid}
       label={input.label}
       value={input.value}
+      onCheck={()=>onCheck(input.id)}
       end={input.validation.end}
       touched={input.touched}
       touchInput={()=>inputTouched(input.id)}
@@ -52,7 +60,7 @@ const inputsStyle=(
         <h1>FormValidation</h1>
           <form>
             {inputsStyle}
-            <button onClick={()=>alert('hello this is formvalidation')} type="button">SUBMIT</button>
+            <button disabled={!checkInput} onClick={buttonHandler} type="button">SUBMIT</button>
           </form>
       </div>
     )

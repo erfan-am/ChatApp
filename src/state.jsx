@@ -65,6 +65,20 @@ export const inputsData=[
      type:"password",
      name:'password',
      touched:false
-    }
+    },
+    {
+      value:'',
+      id:'4',
+      label:'',
+      sub:"Agree with the terms and conditions",
+      error:'',
+      validation:{
+          check:false
+      },
+      isValid:true,
+      type:"checkbox",
+      name:'checkbox',
+     }
+   
   
    ]

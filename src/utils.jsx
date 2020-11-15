@@ -3,6 +3,9 @@ export const checkValidity=(value,rules,inputs)=>{
     if(rules.required){
         isValid=value.trim() && isValid
     }
+     if(rules.check){
+        isValid=rules.check   && isValid
+    }
     if(rules.minLength){
         isValid=value.length >= rules.minLength  && isValid
     }

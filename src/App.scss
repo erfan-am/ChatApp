@@ -7,7 +7,7 @@
   display:block; 
   background:#FFF;
   h1{
-    background-color: #333;
+    background-color: rgb(7, 61, 34);
     color: white;
     width: 100%;
     padding: 0.2rem;
@@ -22,7 +22,7 @@
      width: 100%;
      border-radius: 5px;
      outline: none;
-     background-color: #333;
+     background-color: rgb(5, 53, 41);
      color: white;
      font-size: 1.2em;
      border: none;
@@ -31,6 +31,11 @@
     position:relative; 
     margin-bottom:25px; 
     width: 100%;
+    .checkbox{
+      margin-right: auto;
+      width: 30px;
+      height: 30px;
+    }
     input{
       font-size:18px;
       padding:10px 10px 10px 5px;
