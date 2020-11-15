@@ -10,6 +10,7 @@ username , email , date , password , confirm password.
 <li> email</li>
 <li> password - also comparing "re-type password" inputs</li>
 <li> number</li>
+<li>checkbox</li>
  <!-- number
  date
  time
@@ -17,7 +18,6 @@ username , email , date , password , confirm password.
  search
  file
  tel
- checkbox
  select
  textarea
  hidden – can also have the ‘required’ attribute -->
