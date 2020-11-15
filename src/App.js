@@ -47,6 +47,7 @@ const inputsStyle=(
   )
     return (
       <div className="container">
+        <h1>FormValidation</h1>
           <form>
             {inputsStyle}
             <button onClick={()=>alert('hello this is formvalidation')} type="button">SUBMIT</button>
