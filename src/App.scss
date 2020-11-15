@@ -35,20 +35,23 @@
       padding:10px 10px 10px 5px;
       display:block;
       width:100%;
-      border:none;
-      border-bottom:1px solid #333;
+      border:1px solid #333;
+      border-radius:15px;
       &:focus{ outline:none; }
       &:focus ~ label, &:valid ~ label 		{
-        top:-20px;
+        top:-10px;
         font-size:14px;
         color:#333;
       }
     }
     label{
       color:#333; 
+      background-color: white;
+      border-radius: 2px;
       font-size:18px;
       font-weight:normal;
       position:absolute;
+      font-weight: bold;
       pointer-events:none;
       left:5px;
       top:10px;

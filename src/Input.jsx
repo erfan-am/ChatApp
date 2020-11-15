@@ -12,9 +12,15 @@ const Input = (props) => {
             onBlur={props.touchInput}
             required
         /> 
-        <label style={{color:!props.valid  &&  props.touched  && 'red'  }} 
-        htmlFor={props.name}>{props.label}</label>
-        <p style={{color:!props.valid &&  props.touched && 'red' }}>{props.touched  ?  props.error : props.sub}</p>
+        <label style={{
+                color:!props.valid ? 
+                props.touched && 'red' : 
+                props.end && 'green'  
+            }} 
+            htmlFor={props.name}>{props.label}</label>
+        <p style={{color:!props.valid ? props.touched && 'red' :  props.end ? 'green' :'#333'   }}>
+            {!props.valid && props.touched  ?  props.error : props.end ? 'done..' : props.sub}
+            </p>
     </div>
         )
 }

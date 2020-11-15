@@ -10,6 +10,7 @@ const App =()=>{
 const onChangeHandler=(e,ctrlName)=>{
   const inputs=input.inputs;
   inputs[ctrlName].touched=false;
+  inputs[ctrlName].validation.end=true;
   inputs[ctrlName].value=e.target.value;
   inputs[ctrlName].isValid=checkValidity(
     inputs[ctrlName].value,
@@ -40,6 +41,7 @@ const inputsStyle=(
       valid={input.isValid}
       label={input.label}
       value={input.value}
+      end={input.validation.end}
       touched={input.touched}
       touchInput={()=>inputTouched(input.id)}
       />

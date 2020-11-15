@@ -5,7 +5,8 @@ export const inputsData=[
       validation:{
           required:true,
           minLength:5,
-          maxLength:10
+          maxLength:10,
+          end:false
       },
       label:'Name',
       sub:"Enter your complete name",
@@ -20,7 +21,8 @@ export const inputsData=[
       id:'1',
       validation:{
           required:true,
-          isEmail:true
+          isEmail:true,
+          end:false
       },
       label:'Email',
       sub:'Enter your correct email ',
@@ -40,6 +42,7 @@ export const inputsData=[
           required:true,
           isPass:true,
           minLength:6,
+          end:false,
           maxLength:10
       },
       isValid:true,
@@ -55,6 +58,7 @@ export const inputsData=[
      error:'Password is not match',
      validation:{
          required:true,
+         end:false,
          isConfirm:true,
      },
      isValid:true,

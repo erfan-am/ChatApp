@@ -4,7 +4,7 @@ export const checkValidity=(value,rules,inputs)=>{
         isValid=value.trim() && isValid
     }
     if(rules.minLength){
-        isValid=value.length >= rules.minLength && isValid
+        isValid=value.length >= rules.minLength  && isValid
     }
     if(rules.maxLength){
         isValid=value.length <= rules.maxLength && isValid
@@ -14,10 +14,10 @@ export const checkValidity=(value,rules,inputs)=>{
         isValid= reg.test(value)  && isValid
     }
     if(rules.isPass){
-        isValid=value.length >= rules.minLength && isValid
+        isValid=value.length >= rules.minLength && rules.end  && isValid
     }
     if(rules.isConfirm){
-        isValid=value === inputs[2].value && isValid
+        isValid=value === inputs[2].value && rules.end  && isValid
     }
     return isValid
 }
