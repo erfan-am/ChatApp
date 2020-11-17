@@ -22,7 +22,7 @@ const onChangeHandler=(e,ctrlName)=>{
 } 
 const onCheck=(ctrlName)=>{
   const inputs=input.inputs;
-  inputs[ctrlName].validation.check=true;
+  inputs[ctrlName].validation.check=!inputs[ctrlName].validation.check;
   setInputs({inputs:inputs})
 
 }
@@ -60,7 +60,7 @@ const inputsStyle=(
         <h1>FormValidation</h1>
           <form>
             {inputsStyle}
-            <button disabled={!checkInput} onClick={buttonHandler} type="button">SUBMIT</button>
+            <button style={{opacity:!checkInput ? 0.2 : 1}}  disabled={!checkInput} onClick={buttonHandler} type="button">SUBMIT</button>
           </form>
       </div>
     )
