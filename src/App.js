@@ -22,8 +22,10 @@ const onChangeHandler=(e,ctrlName)=>{
 } 
 const onCheck=(ctrlName)=>{
   const inputs=input.inputs;
+  if(inputs.forEach(input=>input.value !=="")){
   inputs[ctrlName].validation.check=!inputs[ctrlName].validation.check;
   setInputs({inputs:inputs})
+  }
 
 }
 const inputTouched=(ctrlName)=>{
