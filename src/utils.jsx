@@ -20,7 +20,10 @@ export const checkValidity=(value,rules,inputs)=>{
         isValid=value.length >= rules.minLength && rules.end  && isValid
     }
     if(rules.isConfirm){
-        isValid=value === inputs[2].value && rules.end  && isValid
+        isValid=value === inputs[2].value && rules.end    && isValid ;
+        if(value ===inputs[2].value){
+            inputs[4].validation.able=true
+        }
     }
     return isValid
 }

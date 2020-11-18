@@ -7,6 +7,7 @@ const Input = (props) => {
     style={{border:props.valid && props.end ? '1px solid green' : '1px solid #333'}}
     placeholder={props.type !=="checkbox" ? props.placeholder : undefined}
     value={props.type !=="checkbox"  && props.value}
+    disabled={props.type ==="checkbox"  ? !props.disabled : undefined}
     className={`${props.type === "checkbox" && 'checkbox'}`}
     name={props.name}
     type={props.type}
