@@ -56,9 +56,6 @@ const inputsStyle=(
       />
     ))
   )
-  console.log('====================================');
-  console.log(checkInput);
-  console.log('====================================');
     return (
       <div className="container">
         <h1>FormValidation</h1>
