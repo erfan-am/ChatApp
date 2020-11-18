@@ -69,6 +69,19 @@ export const inputsData=[
     {
       value:'',
       id:'4',
+      sub:"Send File",
+      error:'File in not valid',
+      validation:{
+          file:true,
+          able:false
+      },
+      isValid:true,
+      type:"file",
+      name:'file',
+     },
+    {
+      value:'',
+      id:'5',
       label:'',
       sub:"Agree with the terms and conditions",
       error:'',

@@ -11,7 +11,7 @@ const Input = (props) => {
     className={`${props.type === "checkbox" && 'checkbox'}`}
     name={props.name}
     type={props.type}
-    onClick={props.onCheck }
+    onClick={props.type ==="checkbox" ? props.onCheck : undefined }
     onChange={props.type !=="checkbox"  ? props.onChange : undefined}
     onBlur={props.type !=="checkbox" ? props.touchInput : undefined}
     required

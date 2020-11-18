@@ -12,17 +12,16 @@ username , email , date , password , confirm password.
 <li> password - also comparing "re-type password" inputs</li>
 <li> number</li>
 <li>checkbox</li>
+<li>file</li>
  <!-- number
  date
  time
  uRL
  search
- file
  tel
  select
  textarea
  hidden – can also have the ‘required’ attribute -->
-</li>
 </ol>
 
 ## Images

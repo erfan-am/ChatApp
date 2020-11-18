@@ -7,7 +7,7 @@ const App =()=>{
   const [input,setInputs]=useState({
       inputs:inputsData
   })
-  const checkInput=input.inputs[4].validation.check;
+  const checkInput=input.inputs[5].validation.check;
 const onChangeHandler=(e,ctrlName)=>{
   const inputs=input.inputs;
   inputs[ctrlName].touched=false;
@@ -56,6 +56,9 @@ const inputsStyle=(
       />
     ))
   )
+  console.log('====================================');
+  console.log(checkInput);
+  console.log('====================================');
     return (
       <div className="container">
         <h1>FormValidation</h1>

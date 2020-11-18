@@ -3,8 +3,8 @@ export const checkValidity=(value,rules,inputs)=>{
     if(rules.required){
         isValid=value.trim() && isValid
     }
-     if(rules.check){
-        isValid=rules.check   && isValid
+    if(rules.check){
+        isValid=rules.check && isValid
     }
     if(rules.minLength){
         isValid=value.length >= rules.minLength  && isValid
@@ -21,9 +21,10 @@ export const checkValidity=(value,rules,inputs)=>{
     }
     if(rules.isConfirm){
         isValid=value === inputs[2].value && rules.end    && isValid ;
-        if(value ===inputs[2].value){
-            inputs[4].validation.able=true
-        }
+    }
+    if(rules.file){
+        isValid=value !=='' && isValid 
+        if(value !=="" ){inputs[5].validation.able=true}
     }
     return isValid
 }
