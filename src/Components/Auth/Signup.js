@@ -6,6 +6,8 @@ import { Formik } from 'formik';
 import { Validate } from './Validate';
 
 const Login = () => {
+    console.log();
+
     return (
         <div className=" opacity-80 bg-blue-700 flex justify-center min-h-screen relative">
          <div  className="bg-white p-2  fixed mt-10 rounded">

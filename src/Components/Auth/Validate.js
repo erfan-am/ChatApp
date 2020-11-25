@@ -24,7 +24,7 @@ export const Validate=values => {
       if (!values.confirm) {
         errors.confirm = 'Required';
       } else if (
-       values.confirm.value  !== values.password
+       values.confirm.value  === values.password
       ) {
         errors.confirm = 'Password is not match ';
       }
