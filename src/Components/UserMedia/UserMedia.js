@@ -1,6 +1,7 @@
-import React, {  useState } from 'react'
+import React, {  useContext, useState } from 'react'
 import { gif, send, smile } from '../../SVG/SVG'
 import Picker,{SKIN_TONE_DARK} from 'emoji-picker-react';
+import { ChatApp } from '../../Context/ContextAPI';
 
 const UserMedia = () => {
     const [emojies,setEmojies]=useState(false);
@@ -13,6 +14,7 @@ const UserMedia = () => {
         const val=emoji.emoji
           setText({text: text .text+ val})
     }
+    const context=useContext(ChatApp)
     return (
         <div className="fixed bottom-2  rounded-2xl flex justify-center opacity-90 bg-white" style={{
             width:'600px',
@@ -22,6 +24,7 @@ const UserMedia = () => {
             <input style={{border:'1px solid #333'}} 
             type="text" 
             value={text.text}
+            disabled={!context.chooseTarget}
             onChange={onChangeText}
             className=" rounded text-black mt-3 p-2 outline-none" 
             placeholder="Send Message"/>

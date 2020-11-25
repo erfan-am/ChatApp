@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ChatApp } from '../../Context/ContextAPI'
 import { user } from '../../data/users'
 import Mesage from '../UI/Mesage'
 import UserProfileDetails from '../UI/UserProfileDetails'
@@ -16,6 +17,7 @@ const messages=[
         }
 ]
 const MessagePart = () => {
+    const context=useContext(ChatApp);
     return (
         <div  className="bg-white p-3 " style={{
             width:'55%',
@@ -24,12 +26,13 @@ const MessagePart = () => {
             backgroundRepeat:'no-repeat',
             backgroundPosition:'center'
 }}>
-    <div className="bg-white opacity-50 pb-1">
-        <UserProfileDetails user={messages[0]} />        
-    </div>
-            <div className="container">
-                    <Mesage message={messages[0].message} />
-            </div>
+    {context.chooseTarget !==null ? <div className="bg-white opacity-50 pb-1">
+        <UserProfileDetails user={context.chooseTarget} />        
+    </div> : <h1 className="bg-white text-center p-2">Chose Your Target</h1>}
+         {context.chooseTarget && context.chooseTarget.messages &&   <div className="container">
+                   { context.chooseTarget.messages.map((message)=> 
+                   <Mesage key={message.id} message={message} />)}
+            </div>}
             <UserMedia/>
         </div>
     )

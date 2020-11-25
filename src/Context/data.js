@@ -1,0 +1,48 @@
+export const rels=[{
+    name:"Faeze",
+    title:"private",
+    messages:[{
+        id:Math.random().toString(),
+        msg:''
+    }],
+    photo:"https://brinawilliamson.files.wordpress.com/2010/04/cafe-girl-1.jpg",
+    email:"test.test@gmail.com",
+    id:Math.random().toString()
+},
+{
+    name:"Ali",
+    title:"private",
+    messages:[{
+        id:Math.random().toString(),
+        msg:''
+    }],
+    photo:"https://i.pinimg.com/originals/05/35/3e/05353eae3cdc3b7a31658f4cbd0ad05a.jpg",
+    email:"man.testfe@gmail.com",
+    id:Math.random().toString()
+},
+{
+    name:"React",
+    title:"channel",
+    messages:[{
+        id:Math.random().toString(),
+        msg:''
+    }],
+    photo:"https://i.pinimg.com/originals/05/35/3e/05353eae3cdc3b7a31658f4cbd0ad05a.jpg",
+    email:"man.testfe@gmail.com",
+    members:[],
+    id:Math.random().toString()
+},
+{
+    name:"React-Group",
+    title:"group",
+    messages:[{
+        id:Math.random().toString(),
+        msg:''
+    }],
+    photo:"https://i.pinimg.com/originals/05/35/3e/05353eae3cdc3b7a31658f4cbd0ad05a.jpg",
+    email:"man.testfe@gmail.com",
+    members:[],
+    id:Math.random().toString()
+}
+
+]
