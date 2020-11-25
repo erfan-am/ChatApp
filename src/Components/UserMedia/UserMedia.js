@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { gif, send, smile } from '../../SVG/SVG'
 import Picker,{SKIN_TONE_DARK} from 'emoji-picker-react';
 
@@ -9,16 +9,12 @@ const UserMedia = () => {
         const val=e.target.value
           setText({text:val})
     }
-
     const onChange=(e,emoji)=>{
         const val=emoji.emoji
           setText({text: text .text+ val})
     }
- 
-  console.log(text);
-  
     return (
-        <div className="fixed bottom-2  rounded-2xl flex justify-center opacity-80 bg-white" style={{
+        <div className="fixed bottom-2  rounded-2xl flex justify-center opacity-90 bg-white" style={{
             width:'600px',
             height:'50px'
         }}>
@@ -27,7 +23,7 @@ const UserMedia = () => {
             type="text" 
             value={text.text}
             onChange={onChangeText}
-            className=" rounded text-black mt-3 p-1 outline-none" 
+            className=" rounded text-black mt-3 p-2 outline-none" 
             placeholder="Send Message"/>
                 <label  className="mt-4 ml-2">{send}</label>
             </form>
