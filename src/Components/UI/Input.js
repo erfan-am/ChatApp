@@ -2,7 +2,8 @@ import React from 'react'
 
 const INPUT = (props) => {
     return (
-      <div className="p-2 mt-1 m-auto flex  justify-between">
+    <React.Fragment>
+        <div className="p-2 mt-1 m-auto flex  justify-between">
           <label className="p-3">{props.label}:</label>
             <input
             style={{
@@ -12,11 +13,14 @@ const INPUT = (props) => {
             placeholder={props.placeholder}
             type={props.type}
             value={props.value}
+            onBlur={props.onBlur}
             name={props.name}
             onChange={props.onChange}
             required
         />
       </div>
+      <p className="text-red-500 ml-40">{props.error}</p>      
+    </React.Fragment>
     )
 }
 

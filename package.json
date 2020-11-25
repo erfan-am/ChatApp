@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "emoji-picker-react": "^3.2.4",
     "exact": "^0.8.0",
+    "formik": "^2.2.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router": "^5.2.0",

@@ -1,35 +1,77 @@
-import React, { useState } from 'react'
+import React from 'react'
 import INPUT from '../UI/Input'
 import Button from '../UI/Button'
 import { Link } from 'react-router-dom';
+import {  Formik } from 'formik';
 
 const Login = () => {
-    const [text,setText]=useState({email:"",password:""});
-    const onChnageHandler=(e)=>setText({...text,[e.target.name]:e.target.value});
     return (
         <div className=" opacity-80 bg-blue-700 flex justify-center min-h-screen relative">
              <h1 className="text-white text-center mt-36  font-bold  font-serif">Login To ER.ChAT With Email And Password</h1>
          <div  className="bg-white p-3  fixed mt-44 rounded">
-         <form className="mt-10">
-                    <INPUT
+             <Formik initialValues={{email:"",password:""}}
+             validate={values => {
+                const errors = {};
+                if (!values.email) {
+                  errors.email = 'Required';
+                } else if (
+                  !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                ) {
+                  errors.email = 'Invalid email address';
+                }
+                if (!values.password) {
+                    errors.password = 'Required';
+                  } else if (
+                   values.password.length < 6
+                  ) {
+                    errors.password = 'Invalid password ';
+                  }
+                return errors;
+              }}
+              
+              onSubmit={(values, { setSubmitting }) => {
+                setTimeout(() => {
+                  alert(JSON.stringify(values, null, 2));
+                  setSubmitting(false);
+                }, 400);
+              }}
+             >
+                 {({
+         values,
+         errors,
+         touched,
+         handleChange,
+         handleBlur,
+         handleSubmit,
+         isSubmitting,
+         /* and other goodies */
+       })=> (
+             <form onSubmit={handleSubmit} className="mt-10">
+          <INPUT
                         type="email"
                         name="email"
                         label="Email"
                         placeholder="Enter Valid Email"
-                        value={text.email}
-                        onChange={onChnageHandler}
+                        value={values.email}
+                        error={errors.email && touched.email && errors.email}
+                        onBlur={handleBlur}
+                        onChange={handleChange}
                     />
-                         <INPUT
+           <INPUT
                         type="password"
                         placeholder="Enter Valid Password"
                         name="password"
                         label="Password"
-                        value={text.password}
-                        onChange={onChnageHandler}
+                        value={values.password}
+                        onBlure={handleBlur}
+                        error={errors.password && touched.password && errors.password}
+                        onChange={handleChange}
                     />
-                    <p className="text-center">If you don't have account please click  <Link  className="text-blue-600 hover:text-red-60" to="/signup">here</Link></p>
-                    <Button type="button" children="Login" className="mx-36" />
-            </form>
+           <p className="text-center">If you don't have account please click  <Link  className="text-blue-600 hover:text-red-60" to="/signup">here</Link></p>
+           <Button type="submit" onClick={handleSubmit} disabled={isSubmitting} children="Login" className="mx-36" />
+           </form>
+       )}
+             </Formik>
          </div>
         </div>
     )
