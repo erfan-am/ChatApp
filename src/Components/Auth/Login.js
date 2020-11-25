@@ -3,6 +3,7 @@ import INPUT from '../UI/Input'
 import Button from '../UI/Button'
 import { Link } from 'react-router-dom';
 import {  Formik } from 'formik';
+import { Validate } from './Validate';
 
 const Login = () => {
     return (
@@ -10,25 +11,7 @@ const Login = () => {
              <h1 className="text-white text-center mt-36  font-bold  font-serif">Login To ER.ChAT With Email And Password</h1>
          <div  className="bg-white p-3  fixed mt-44 rounded">
              <Formik initialValues={{email:"",password:""}}
-             validate={values => {
-                const errors = {};
-                if (!values.email) {
-                  errors.email = 'Required';
-                } else if (
-                  !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                ) {
-                  errors.email = 'Invalid email address';
-                }
-                if (!values.password) {
-                    errors.password = 'Required';
-                  } else if (
-                   values.password.length < 6
-                  ) {
-                    errors.password = 'Invalid password ';
-                  }
-                return errors;
-              }}
-              
+             validate={(values)=>Validate(values)}
               onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
                   alert(JSON.stringify(values, null, 2));
