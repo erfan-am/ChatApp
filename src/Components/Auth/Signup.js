@@ -43,7 +43,7 @@ const Login = () => {
                         value={text.confirm}
                         onChange={onChnageHandler}
                     />
-                    <p className="text-center">If you don't have account please click  <Link  className="text-blue-600 hover:text-red-600" to="/login">here</Link></p>
+                    <p className="text-center">If you  have account , please click  <Link  className="text-blue-600 hover:text-red-600" to="/login">here</Link></p>
                     <Button type="button" children="Signup" className="mx-36" />
             </form>
          </div>
