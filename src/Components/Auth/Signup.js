@@ -63,7 +63,7 @@ const Login = () => {
                       <INPUT
                         type="password"
                         placeholder="Enter Password Again"
-                        name="password"
+                        name="confirm"
                         label="Confirm"
                         value={values.confirm}
                         onChange={handleChange}

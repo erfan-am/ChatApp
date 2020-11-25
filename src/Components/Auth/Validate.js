@@ -1,21 +1,21 @@
 export const Validate=values => {
     const errors = {};
     if (!values.name) {
-        errors.name = 'Required';
+        errors.name = 'Username Required';
       } else if (
-       values.password.length < 6
+       values.name.length < 4
       ) {
-        errors.email = 'Invalid name ';
+        errors.name = 'Invalid name ';
       }
     if (!values.email) {
-      errors.email = 'Required';
+      errors.email = 'Email Required';
     } else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
     ) {
       errors.email = 'Invalid email address';
     }
     if (!values.password) {
-        errors.password = 'Required';
+        errors.password = 'Password Required';
       } else if (
        values.password.length < 6
       ) {
